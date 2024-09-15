@@ -273,7 +273,7 @@ class SecurityServiceTest {
     @ParameterizedTest(name = "{0}")
     @CsvSource({
             "Test_Case_9_Disarm_System_Set_Status_to_No_Alarm",
-            "resetSensors_WhenSystemArmedAway_SensorsBecomeInactive",
+            "Test_Case_13_resetSensors_WhenSystemArmedAway_SensorsBecomeInactive",
             "Test_Case_10_Arm_System_Reset_All_Sensors_to_Inactive"
     })
     void updateSystemArmingState(String testName) {
@@ -293,7 +293,7 @@ class SecurityServiceTest {
         Map<String, Runnable> mockSetup = new HashMap<>();
 
         // Add mock behaviors for both Armed Away and Armed At Home cases
-        mockSetup.put("resetSensors_WhenSystemArmedAway_SensorsBecomeInactive", () -> setupMocks(sensorSet));
+        mockSetup.put("Test_Case_13_resetSensors_WhenSystemArmedAway_SensorsBecomeInactive", () -> setupMocks(sensorSet));
         mockSetup.put("Test_Case_10_Arm_System_Reset_All_Sensors_to_Inactive", () -> setupMocks(sensorSet));
         // Execute the mock setup for the given test case
         mockSetup.getOrDefault(testName, () -> {}).run();
@@ -323,7 +323,7 @@ class SecurityServiceTest {
         // Populate the map with test cases and their corresponding arming statuses
         //9.If the system is disarmed, set the status to no alarm.
         statusMap.put("Test_Case_9_Disarm_System_Set_Status_to_No_Alarm", ArmingStatus.DISARMED);
-        statusMap.put("resetSensors_WhenSystemArmedAway_SensorsBecomeInactive", ArmingStatus.ARMED_AWAY);
+        statusMap.put("Test_Case_13_resetSensors_WhenSystemArmedAway_SensorsBecomeInactive", ArmingStatus.ARMED_AWAY);
         statusMap.put("Test_Case_10_Arm_System_Reset_All_Sensors_to_Inactive", ArmingStatus.ARMED_HOME);
 
         // Retrieve the corresponding ArmingStatus for the test case and set it, or do nothing if not found
@@ -351,7 +351,7 @@ class SecurityServiceTest {
         });
 
         // Define verification logic for when the system is armed away
-        verificationLogic.put("resetSensors_WhenSystemArmedAway_SensorsBecomeInactive", verifySensorsInactive);
+        verificationLogic.put("Test_Case_13_resetSensors_WhenSystemArmedAway_SensorsBecomeInactive", verifySensorsInactive);
 
         // Define verification logic for when the system is armed at home
         //If the system is armed, reset all sensors to inactive.
@@ -364,39 +364,6 @@ class SecurityServiceTest {
             System.out.println("No matching verification logic for test case: " + testName);
         }).run();
     }
-
-
-    private void performAction(ActionType actionType, Sensor sensor, StatusListener statusListener) {
-        Map<ActionType, Runnable> actions = new HashMap<>();
-
-        // If the actionType is ADD_STATUS_LISTENER, add the statusListener to the securityService.
-        actions.put(ActionType.ADD_STATUS_LISTENER, () -> securityServiceMockTest.addStatusListener(statusListener));
-
-        // If the actionType is REMOVE_STATUS_LISTENER, remove the statusListener from the securityService.
-        actions.put(ActionType.REMOVE_STATUS_LISTENER, () -> securityServiceMockTest.removeStatusListener(statusListener));
-
-        // If the actionType is ADD_SENSOR, add the sensor to the securityService.
-        actions.put(ActionType.ADD_SENSOR, () -> securityServiceMockTest.addSensor(sensor));
-
-        // If the actionType is REMOVE_SENSOR, remove the sensor from the securityService.
-        actions.put(ActionType.REMOVE_SENSOR, () -> securityServiceMockTest.removeSensor(sensor));
-
-        // Retrieve the corresponding action (Runnable) for the given actionType.
-        // This is where we dynamically decide which action to perform based on the actionType.
-        Runnable action = actions.get(actionType);
-
-        // Check if the action for the provided actionType exists in the map.
-        // If an action is found (action != null), run it using action.run().
-        if (action != null) {
-            action.run();
-        }
-        // If no action is found (action == null), it means the provided actionType is unknown or invalid.
-        // In this case, throw an IllegalArgumentException to signal an error.
-        else {
-            throw new IllegalArgumentException("Unknown action type: " + actionType);
-        }
-    }
-
 
     // Enums for action types to improve type safety and readability
     enum ActionType {
@@ -443,5 +410,34 @@ class SecurityServiceTest {
         assertEquals(expectedStatus, actualStatus, "The returned alarm status should match the expected status.");
     }
 
+    private void performAction(ActionType actionType, Sensor sensor, StatusListener statusListener) {
+        Map<ActionType, Runnable> actions = new HashMap<>();
 
+        // If the actionType is ADD_STATUS_LISTENER, add the statusListener to the securityService.
+        actions.put(ActionType.ADD_STATUS_LISTENER, () -> securityServiceMockTest.addStatusListener(statusListener));
+
+        // If the actionType is REMOVE_STATUS_LISTENER, remove the statusListener from the securityService.
+        actions.put(ActionType.REMOVE_STATUS_LISTENER, () -> securityServiceMockTest.removeStatusListener(statusListener));
+
+        // If the actionType is ADD_SENSOR, add the sensor to the securityService.
+        actions.put(ActionType.ADD_SENSOR, () -> securityServiceMockTest.addSensor(sensor));
+
+        // If the actionType is REMOVE_SENSOR, remove the sensor from the securityService.
+        actions.put(ActionType.REMOVE_SENSOR, () -> securityServiceMockTest.removeSensor(sensor));
+
+        // Retrieve the corresponding action (Runnable) for the given actionType.
+        // This is where we dynamically decide which action to perform based on the actionType.
+        Runnable action = actions.get(actionType);
+
+        // Check if the action for the provided actionType exists in the map.
+        // If an action is found (action != null), run it using action.run().
+        if (action != null) {
+            action.run();
+        }
+        // If no action is found (action == null), it means the provided actionType is unknown or invalid.
+        // In this case, throw an IllegalArgumentException to signal an error.
+        else {
+            throw new IllegalArgumentException("Unknown action type: " + actionType);
+        }
+    }
 }
