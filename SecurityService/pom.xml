@@ -18,25 +18,28 @@
     </properties>
 
     <dependencies>
-        <!-- add your dependencies here! -->
+        <!-- MigLayout: A flexible layout manager for Swing -->
         <dependency>
             <groupId>com.miglayout</groupId>
             <artifactId>miglayout-swing</artifactId>
             <version>5.0</version>
         </dependency>
 
+        <!-- Google Guava: A popular Java utility library for collections, caching, etc. -->
         <dependency>
             <groupId>com.google.guava</groupId>
             <artifactId>guava</artifactId>
             <version>33.1.0-jre</version>
         </dependency>
 
+        <!-- Gson: Library to convert Java objects to JSON and vice versa -->
         <dependency>
             <groupId>com.google.code.gson</groupId>
             <artifactId>gson</artifactId>
             <version>2.10.1</version>
         </dependency>
 
+        <!-- JUnit Jupiter: The API for writing unit tests with JUnit 5 -->
         <dependency>
             <groupId>org.junit.jupiter</groupId>
             <artifactId>junit-jupiter</artifactId>
@@ -44,42 +47,45 @@
             <scope>test</scope>
         </dependency>
 
-        <!-- JUnit 5 Dependencies -->
+        <!-- JUnit 5 API: Additional dependencies for JUnit 5 testing framework -->
         <dependency>
             <groupId>org.junit.jupiter</groupId>
             <artifactId>junit-jupiter-api</artifactId>
-            <version>5.9.3</version> <!-- Replace with the latest version -->
+            <version>5.9.3</version>
             <scope>test</scope>
         </dependency>
         <dependency>
             <groupId>org.junit.jupiter</groupId>
             <artifactId>junit-jupiter-engine</artifactId>
-            <version>5.9.3</version> <!-- Replace with the latest version -->
+            <version>5.9.3</version>
             <scope>test</scope>
         </dependency>
 
-        <!-- Mockito Dependencies -->
+        <!-- Mockito: A mocking framework for unit tests in Java -->
         <dependency>
             <groupId>org.mockito</groupId>
             <artifactId>mockito-core</artifactId>
-            <version>5.7.0</version> <!-- Replace with the latest version -->
+            <version>5.7.0</version>
             <scope>test</scope>
         </dependency>
+
+        <!-- Mockito with JUnit: Allows integration of Mockito and JUnit 5 -->
         <dependency>
             <groupId>org.mockito</groupId>
             <artifactId>mockito-junit-jupiter</artifactId>
-            <version>5.7.0</version> <!-- Replace with the latest version -->
+            <version>5.7.0</version>
             <scope>test</scope>
         </dependency>
 
-        <!-- Optional: Assertions Library (if needed) -->
+        <!-- AssertJ: A library for fluent assertion in tests -->
         <dependency>
             <groupId>org.assertj</groupId>
             <artifactId>assertj-core</artifactId>
-            <version>3.23.1</version> <!-- Replace with the latest version -->
+            <version>3.23.1</version>
             <scope>test</scope>
         </dependency>
 
+        <!-- ImageService: Dependency for a custom image processing service -->
         <dependency>
             <groupId>com.udasecurity</groupId>
             <artifactId>ImageService</artifactId>
@@ -90,7 +96,6 @@
 
     <build>
         <plugins>
-
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
@@ -136,11 +141,6 @@
                         --add-opens com.udasecurity/com.udasecurity.service=ALL-UNNAMED
                     </argLine>
                 </configuration>
-            </plugin>
-            <plugin>
-                <groupId>com.github.spotbugs</groupId>
-                <artifactId>spotbugs-maven-plugin</artifactId>
-                <version>4.7.0.0</version>
             </plugin>
         </plugins>
 

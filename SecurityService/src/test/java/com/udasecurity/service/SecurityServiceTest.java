@@ -4,7 +4,6 @@ import com.udasecurity.application.StatusListener;
 import com.udasecurity.data.*;
 import com.udasecurity.service.image.FakeImageService;
 import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.junit.jupiter.params.ParameterizedTest;
@@ -52,17 +51,10 @@ class SecurityServiceTest {
     })
     @ParameterizedTest(name = "name_test_case_{0}")
     void updateSensorState_OnActivationOrDeactivation(String testName) {
-        // SETUP INPUT
-        Sensor input = new Sensor("Sensor", SensorType.DOOR);
-
-        // Setup the mappings for test case to behavior
-        setupSecurityRepositoryMocks(testName, input);
-
+        Sensor receivedInput = new Sensor("Sensor", SensorType.DOOR);
+        setupSecurityRepositoryMocks(testName, receivedInput);
         try {
-            // EXECUTE METHOD
-            executeChangeSensorActivationStatus(testName, input);
-
-            // VERIFY
+            executeChangeSensorActivationStatus(testName, receivedInput);
             verifyAlarmStatus(testName);
         } catch (Exception ex) {
             throw ex;
@@ -70,7 +62,6 @@ class SecurityServiceTest {
     }
 
     private void setupSecurityRepositoryMocks(String testName, Sensor input) {
-        // Map to hold test case specific mock setups
         Map<String, Runnable> mockSetup = new HashMap<>();
 
         // Set up common mock behavior
@@ -90,7 +81,6 @@ class SecurityServiceTest {
             setAlarmStatus(AlarmStatus.PENDING_ALARM);
         });
 
-        // NEW TEST CASES
         // 7. Test for disarmed system where activating a sensor should not change the alarm state
         mockSetup.put("Test_Case_7_Disarmed_System_Should_Not_Activate_Alarm", () -> setupAlarm(ArmingStatus.DISARMED, AlarmStatus.NO_ALARM));
 
@@ -125,7 +115,6 @@ class SecurityServiceTest {
     }
 
     private void executeChangeSensorActivationStatus(String testName, Sensor input) {
-        // Map to hold the logic for executing test cases
         Map<String, Runnable> executionLogic = getStringRunnableMap(input);
 
         // Default case: if the testName doesn't match any specific case, activate the sensor
@@ -162,7 +151,6 @@ class SecurityServiceTest {
     }
 
     private void verifyAlarmStatus(String testName) {
-        // Map to hold the verification logic for different test cases
         Map<String, Runnable> verificationLogic = new HashMap<>();
 
         // Define verification logic for various scenarios
@@ -201,24 +189,20 @@ class SecurityServiceTest {
             "Test_Case_7_Armed-Home_Cat_Detected_in_Camera_Trigger_Alarm",
             "Test_Case_8_Armed_Home_No_Cat_in_Camera_Return_to_No_Alarm_(If_Sensors_Inactive)",
             "Test_Case_11_Armed-Home_Cat_Detected_Set_Alarm_Status_to_Alarm",
-            "Test_Case_12_Armed_Home_No_Cat_with_Active_Sensor_No_Alarm_Status_Change" // New test case
+            "Test_Case_12_Armed_Home_No_Cat_with_Active_Sensor_No_Alarm_Status_Change"
     })
     void analyzeImageForDetection(String testName) {
-        // Setup mock behaviors based on the test case
         setupProcessImageMocks(testName);
-
-        // Create a mock of BufferedImage
-        BufferedImage bufferedImageMock = Mockito.mock(BufferedImage.class);
+        BufferedImage sampleBufferedImage = Mockito.mock(BufferedImage.class);
 
         // Execute the method under test
-        securityServiceMockTest.processImage(bufferedImageMock);
+        securityServiceMockTest.processImage(sampleBufferedImage);
 
         // Verify the behavior of the method based on the test case
         verifyProcessImage(testName);
     }
 
     private void setupProcessImageMocks(String testName) {
-        // Map to hold mock setup logic for different test cases
         Map<String, Runnable> mockSetup = new HashMap<>();
 
         // Define mock setup for when an image containing a cat is detected and the system is armed
@@ -258,7 +242,6 @@ class SecurityServiceTest {
     }
 
     private void verifyProcessImage(String testName) {
-        // Map to hold verification logic for different test cases
         Map<String, Runnable> verificationLogic = new HashMap<>();
 
         // Define verification logic for when an image containing a cat is detected and the system is armed
@@ -294,13 +277,9 @@ class SecurityServiceTest {
             "Test_Case_10_Arm_System_Reset_All_Sensors_to_Inactive"
     })
     void updateSystemArmingState(String testName) {
-        // Setup mock behaviors for each test case
         Set<Sensor> sensorSet = setupSetArmingStatusMocks(testName);
-
         try {
-            // Execute the method to test based on the test case
             executeSetArmingStatus(testName);
-
             // Verify that the behavior is correct based on the test case
             verifySetArmingStatus(testName, sensorSet);
         } catch (Exception ex) {
@@ -310,10 +289,7 @@ class SecurityServiceTest {
     }
 
     private Set<Sensor> setupSetArmingStatusMocks(String testName) {
-        // Create a set to hold sensor objects for the test
         Set<Sensor> sensorSet = new HashSet<>();
-
-        // Map to store different mock setups based on the test case identifier
         Map<String, Runnable> mockSetup = new HashMap<>();
 
         // Add mock behaviors for both Armed Away and Armed At Home cases
@@ -328,7 +304,6 @@ class SecurityServiceTest {
 
     // Helper method to set up mocks
     private void setupMocks(Set<Sensor> sensorSet) {
-        // Initialize sensors with unique identifiers and types
         sensorSet.add(new Sensor("FrontDoorSensor", SensorType.DOOR));
         sensorSet.add(new Sensor("LivingRoomWindowSensor", SensorType.WINDOW));
         sensorSet.add(new Sensor("LivingRoomMotionSensor", SensorType.MOTION));
@@ -343,7 +318,6 @@ class SecurityServiceTest {
 
 
     private void executeSetArmingStatus(String testName) {
-        // Create a map to link test case names to arming status changes using method references
         Map<String, ArmingStatus> statusMap = new HashMap<>();
 
         // Populate the map with test cases and their corresponding arming statuses
@@ -435,7 +409,6 @@ class SecurityServiceTest {
     // Consolidated test for status listener actions
     @Test
     void testSecurityServiceActionsAndAlarmStatus() {
-        // Setup common sensor and status listener
         Sensor sensor = new Sensor("SensorTest", SensorType.DOOR);
 
         // Use thenAnswer to dynamically return alarm status based on input

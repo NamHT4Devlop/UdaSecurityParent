@@ -22,17 +22,17 @@
     <build>
         <pluginManagement>
             <plugins>
-                <!-- Plugin để dọn dẹp các file đã tạo trong quá trình build -->
+                <!-- Plugin to clean files generated during the build process -->
                 <plugin>
                     <artifactId>maven-clean-plugin</artifactId>
                     <version>3.2.0</version>
                 </plugin>
-                <!-- Plugin để xử lý các tài nguyên như file properties -->
+                <!-- Plugin to handle resources like property files -->
                 <plugin>
                     <artifactId>maven-resources-plugin</artifactId>
                     <version>3.3.1</version>
                 </plugin>
-                <!-- Plugin để biên dịch mã nguồn Java -->
+                <!-- Plugin to compile Java source code -->
                 <plugin>
                     <artifactId>maven-compiler-plugin</artifactId>
                     <version>3.11.0</version>
@@ -44,32 +44,33 @@
                     </configuration>
                 </plugin>
 
+                <!-- Plugin to run tests during the build -->
                 <plugin>
                     <artifactId>maven-surefire-plugin</artifactId>
                     <version>3.0.0-M5</version>
                 </plugin>
 
-                <!-- Plugin để tạo file JAR từ mã nguồn đã biên dịch -->
+                <!-- Plugin to package the compiled code into a JAR file -->
                 <plugin>
                     <artifactId>maven-jar-plugin</artifactId>
                     <version>3.3.0</version>
                 </plugin>
-                <!-- Plugin để cài đặt file JAR vào local repository -->
+                <!-- Plugin to install the JAR into the local repository -->
                 <plugin>
                     <artifactId>maven-install-plugin</artifactId>
                     <version>3.1.1</version>
                 </plugin>
-                <!-- Plugin để deploy file JAR lên remote repository -->
+                <!-- Plugin to deploy the JAR to a remote repository -->
                 <plugin>
                     <artifactId>maven-deploy-plugin</artifactId>
                     <version>3.1.1</version>
                 </plugin>
-                <!-- Plugin để tạo site documentation cho dự án -->
+                <!-- Plugin to generate site documentation for the project -->
                 <plugin>
                     <artifactId>maven-site-plugin</artifactId>
                     <version>3.12.1</version>
                 </plugin>
-                <!-- Plugin để tạo các báo cáo thông tin dự án -->
+                <!-- Plugin to generate project information reports -->
                 <plugin>
                     <artifactId>maven-project-info-reports-plugin</artifactId>
                     <version>3.5.0</version>
@@ -79,7 +80,7 @@
     </build>
     <reporting>
         <plugins>
-            <!-- Plugin để phân tích mã nguồn và tìm lỗi -->
+            <!-- Plugin to analyze source code and find potential bugs -->
             <plugin>
                 <groupId>com.github.spotbugs</groupId>
                 <artifactId>spotbugs-maven-plugin</artifactId>

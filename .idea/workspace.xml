@@ -5,43 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="332de968-a631-45fc-a22c-007ca9970331" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/aws.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/material_theme_project_new.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ImageService/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ImageService/src/main/java/com/udasecurity/service/image/AwsImageService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ImageService/src/main/java/com/udasecurity/service/image/FakeImageService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ImageService/src/main/java/module-info.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SecurityService/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SecurityService/src/main/java/com/udasecurity/application/CatpointApp.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SecurityService/src/main/java/com/udasecurity/application/CatpointGui.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SecurityService/src/main/java/com/udasecurity/application/ControlPanel.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SecurityService/src/main/java/com/udasecurity/application/DisplayPanel.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SecurityService/src/main/java/com/udasecurity/application/ImagePanel.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SecurityService/src/main/java/com/udasecurity/application/SensorPanel.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SecurityService/src/main/java/com/udasecurity/application/StatusListener.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SecurityService/src/main/java/com/udasecurity/data/AlarmStatus.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SecurityService/src/main/java/com/udasecurity/data/ArmingStatus.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SecurityService/src/main/java/com/udasecurity/data/PretendDatabaseSecurityRepositoryImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SecurityService/src/main/java/com/udasecurity/data/SecurityRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SecurityService/src/main/java/com/udasecurity/data/Sensor.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SecurityService/src/main/java/com/udasecurity/data/SensorType.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SecurityService/src/main/java/com/udasecurity/service/SecurityService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SecurityService/src/main/java/com/udasecurity/service/StyleService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SecurityService/src/main/java/module-info.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SecurityService/src/main/resources/log4j.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SecurityService/src/test/java/com/udasecurity/service/SecurityServiceTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sample-cat.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sample-not-a-cat-fail.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sample-not-cat.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/udasecurity/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SecurityService/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/SecurityService/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SecurityService/src/test/java/com/udasecurity/service/SecurityServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/SecurityService/src/test/java/com/udasecurity/service/SecurityServiceTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -128,7 +95,7 @@
       <recent name="com.udasecurity.service" />
     </key>
   </component>
-  <component name="RunManager" selected="JAR Application.SecurityService-1.0-SNAPSHOT-jar-with-dependencies.jar">
+  <component name="RunManager" selected="JUnit.SecurityServiceTest">
     <configuration name="SecurityServiceTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="SecurityService" />
       <option name="PACKAGE_NAME" value="com.udasecurity.service" />
@@ -192,8 +159,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JAR Application.SecurityService-1.0-SNAPSHOT-jar-with-dependencies.jar" />
         <item itemvalue="JUnit.SecurityServiceTest" />
+        <item itemvalue="JAR Application.SecurityService-1.0-SNAPSHOT-jar-with-dependencies.jar" />
         <item itemvalue="JUnit.SecurityServiceTest.testSecurityServiceActionsAndAlarmStatus" />
         <item itemvalue="JUnit.SecurityServiceTest.setArmingStatus" />
         <item itemvalue="JUnit.SecurityServiceTest.processImage" />
@@ -224,12 +191,23 @@
       <workItem from="1726225696941" duration="8108000" />
       <workItem from="1726290255559" duration="19613000" />
       <workItem from="1726334679686" duration="2127000" />
-      <workItem from="1726336833071" duration="7365000" />
+      <workItem from="1726336833071" duration="9123000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
