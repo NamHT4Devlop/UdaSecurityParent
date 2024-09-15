@@ -25,14 +25,14 @@ class SecurityServiceTest {
     @InjectMocks
     private SecurityService securityServiceMockTest;
 
-    @Spy // Using @Spy to create a partial mock, allowing real method invocations
-    private SecurityRepository securityRepositorySpy = Mockito.mock(SecurityRepository.class); // Using mock for SecurityRepository
+    @Spy
+    private SecurityRepository securityRepositorySpy = Mockito.mock(SecurityRepository.class);
 
-    @Spy // Using @Spy to allow for method stubbing and real method calls
-    private FakeImageService fakeImageServiceSpy = Mockito.mock(FakeImageService.class); // Using mock for FakeImageService
+    @Spy
+    private FakeImageService fakeImageServiceSpy = Mockito.mock(FakeImageService.class);
 
-    @Spy // StatusListener spy for real and mocked behaviors
-    private StatusListener statusListener = Mockito.mock(StatusListener.class); // Using mock for StatusListener
+    @Spy
+    private StatusListener statusListener = Mockito.mock(StatusListener.class);
 
     @BeforeEach
     void init() {
@@ -40,14 +40,14 @@ class SecurityServiceTest {
     }
 
     @CsvSource({
-            "Test_Case_1_Arm_System_Activate_Sensor_Pending_Alarm_Status", // Test case for armed system activating a sensor
-            "Test_Case_2_Arm_System_Activate_Sensor_in_Pending_Alarm_Transition_to_Alarm_Status", // Test case for transitioning to alarm
-            "Test_Case_3_Pending_Alarm_All_Sensors_Inactive_Return_to_No_Alarm", // Test case for all sensors inactive
-            "Test_Case_4_Alarm_Active_Sensor_State_Changes_Should_Not_Affect_Alarm", // Test case for state changes
-            "Test_Case_5_Pending_Alarm_Sensor_Already_Active_Transition_to_Alarm_Status", // Test case for already active sensor
-            "Test_Case_6_Deactivate_Inactive_Sensor_No_Change_in_Alarm_State", // Test case for deactivating inactive sensor
-            "Test_Case_7_Disarmed_System_Should_Not_Activate_Alarm", // Test case for disarmed state
-            "Test_Case_8_Alarm_No_Change_When_Sensor_Deactivated" // Test case for deactivating a sensor when alarm is already in alarm state
+            "Test_Case_1_Arm_System_Activate_Sensor_Pending_Alarm_Status", // 1. If alarm is armed and a sensor becomes activated, put the system into pending alarm status.
+            "Test_Case_2_Arm_System_Activate_Sensor_in_Pending_Alarm_Transition_to_Alarm_Status", // 2. If alarm is armed and a sensor becomes activated and the system is already pending alarm, set the alarm status to alarm on. [This is the case where all sensors are deactivated and then one gets activated]
+            "Test_Case_3_Pending_Alarm_All_Sensors_Inactive_Return_to_No_Alarm", // 3. If pending alarm and all sensors are inactive, return to no alarm state.
+            "Test_Case_4_Alarm_Active_Sensor_State_Changes_Should_Not_Affect_Alarm", // 4. If alarm is active, change in sensor state should not affect the alarm state.
+            "Test_Case_5_Pending_Alarm_Sensor_Already_Active_Transition_to_Alarm_Status", // 5. If a sensor is activated while already active and the system is in pending state, change it to alarm state. [This is the case where one sensor is already active and then another gets activated]
+            "Test_Case_6_Deactivate_Inactive_Sensor_No_Change_in_Alarm_State", // 6. If a sensor is deactivated while already inactive, make no changes to the alarm state.
+            "Test_Case_7_Disarmed_System_Should_Not_Activate_Alarm", // 7. If the camera image contains a cat while the system is armed-home, put the system into alarm status.
+            "Test_Case_8_Alarm_No_Change_When_Sensor_Deactivated" // 8. If the camera image does not contain a cat, change the status to no alarm as long as the sensors are not active.
     })
     @ParameterizedTest(name = "name_test_case_{0}")
     void updateSensorState_OnActivationOrDeactivation(String testName) {
@@ -188,7 +188,7 @@ class SecurityServiceTest {
     @CsvSource({
             "Test_Case_7_Armed-Home_Cat_Detected_in_Camera_Trigger_Alarm",
             "Test_Case_8_Armed_Home_No_Cat_in_Camera_Return_to_No_Alarm_(If_Sensors_Inactive)",
-            "Test_Case_11_Armed-Home_Cat_Detected_Set_Alarm_Status_to_Alarm",
+            "Test_Case_11_Armed-Home_Cat_Detected_Set_Alarm_Status_to_Alarm", // 11. If the system is armed-home while the camera shows a cat, set the alarm status to alarm.
             "Test_Case_12_Armed_Home_No_Cat_with_Active_Sensor_No_Alarm_Status_Change"
     })
     void analyzeImageForDetection(String testName) {
@@ -272,9 +272,9 @@ class SecurityServiceTest {
 
     @ParameterizedTest(name = "{0}")
     @CsvSource({
-            "Test_Case_9_Disarm_System_Set_Status_to_No_Alarm",
+            "Test_Case_9_Disarm_System_Set_Status_to_No_Alarm", // 9. If the system is disarmed, set the status to no alarm.
             "Test_Case_13_resetSensors_WhenSystemArmedAway_SensorsBecomeInactive",
-            "Test_Case_10_Arm_System_Reset_All_Sensors_to_Inactive"
+            "Test_Case_10_Arm_System_Reset_All_Sensors_to_Inactive" // 10 If the system is armed, reset all sensors to inactive.
     })
     void updateSystemArmingState(String testName) {
         Set<Sensor> sensorSet = setupSetArmingStatusMocks(testName);
@@ -304,15 +304,18 @@ class SecurityServiceTest {
 
     // Helper method to set up mocks
     private void setupMocks(Set<Sensor> sensorSet) {
-        sensorSet.add(new Sensor("FrontDoorSensor", SensorType.DOOR));
-        sensorSet.add(new Sensor("LivingRoomWindowSensor", SensorType.WINDOW));
-        sensorSet.add(new Sensor("LivingRoomMotionSensor", SensorType.MOTION));
+        // Add sensors to the set
+        Collections.addAll(sensorSet,
+                new Sensor("FrontDoorSensor", SensorType.DOOR),
+                new Sensor("LivingRoomWindowSensor", SensorType.WINDOW),
+                new Sensor("LivingRoomMotionSensor", SensorType.MOTION)
+        );
 
         // Mock the behavior of the securityRepository to return specific statuses and sensors
-        Mockito.doReturn(AlarmStatus.PENDING_ALARM).when(securityRepositorySpy).getAlarmStatus();
-        Mockito.doReturn(sensorSet).when(securityRepositorySpy).getSensors();
+        Mockito.when(securityRepositorySpy.getAlarmStatus()).thenReturn(AlarmStatus.PENDING_ALARM);
+        Mockito.when(securityRepositorySpy.getSensors()).thenReturn(sensorSet);
 
-        // Set all sensors to active initially
+        // Set all sensors to active initially using method reference
         sensorSet.forEach(sensor -> sensor.setActive(true));
     }
 
