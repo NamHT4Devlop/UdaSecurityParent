@@ -23,7 +23,7 @@ public class SecurityService {
     private FakeImageService imageService;
     private SecurityRepository securityRepository;
     private Set<StatusListener> statusListeners = new HashSet<>();
-
+    // Section 4: Fix Any Bugs You Find With Your Unit Tests!
     private static Boolean flagDetectionStatus = false;
 
     public SecurityService(SecurityRepository securityRepository, FakeImageService imageService) {
