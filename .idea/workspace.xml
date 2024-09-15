@@ -1,0 +1,256 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="332de968-a631-45fc-a22c-007ca9970331" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/aws.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/material_theme_project_new.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ImageService/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ImageService/src/main/java/com/udasecurity/service/image/AwsImageService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ImageService/src/main/java/com/udasecurity/service/image/FakeImageService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ImageService/src/main/java/module-info.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SecurityService/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SecurityService/src/main/java/com/udasecurity/application/CatpointApp.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SecurityService/src/main/java/com/udasecurity/application/CatpointGui.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SecurityService/src/main/java/com/udasecurity/application/ControlPanel.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SecurityService/src/main/java/com/udasecurity/application/DisplayPanel.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SecurityService/src/main/java/com/udasecurity/application/ImagePanel.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SecurityService/src/main/java/com/udasecurity/application/SensorPanel.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SecurityService/src/main/java/com/udasecurity/application/StatusListener.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SecurityService/src/main/java/com/udasecurity/data/AlarmStatus.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SecurityService/src/main/java/com/udasecurity/data/ArmingStatus.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SecurityService/src/main/java/com/udasecurity/data/PretendDatabaseSecurityRepositoryImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SecurityService/src/main/java/com/udasecurity/data/SecurityRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SecurityService/src/main/java/com/udasecurity/data/Sensor.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SecurityService/src/main/java/com/udasecurity/data/SensorType.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SecurityService/src/main/java/com/udasecurity/service/SecurityService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SecurityService/src/main/java/com/udasecurity/service/StyleService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SecurityService/src/main/java/module-info.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SecurityService/src/main/resources/log4j.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SecurityService/src/test/java/com/udasecurity/service/SecurityServiceTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sample-cat.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sample-not-a-cat-fail.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sample-not-cat.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/udasecurity/Main.java" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="module-info" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 1
+}</component>
+  <component name="ProjectId" id="2lkds5PXZpwXwLqN4mak0Yusz8k" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "JAR Application.SecurityService-1.0-SNAPSHOT-jar-with-dependencies.jar.executor": "Run",
+    "JAR Application.SecurityService-1.0-SNAPSHOT.jar.executor": "Run",
+    "JUnit.SecurityServiceTest.alarmIsArmed_sensorActivated_systemShouldPendingAlarmStatus.executor": "Run",
+    "JUnit.SecurityServiceTest.changeSensorActivationStatus.executor": "Coverage",
+    "JUnit.SecurityServiceTest.executor": "Run",
+    "JUnit.SecurityServiceTest.processImage.executor": "Run",
+    "JUnit.SecurityServiceTest.setArmingStatus.executor": "Run",
+    "JUnit.SecurityServiceTest.shouldEnterPendingAlarmState_whenSensorActivatedAndAlarmArmed.executor": "Run",
+    "JUnit.SecurityServiceTest.shouldTransitionToPendingAlarm_whenAlarmArmedAndSensorActivated.executor": "Run",
+    "JUnit.SecurityServiceTest.testAlarmActiveAndSensorStateChange.executor": "Run",
+    "JUnit.SecurityServiceTest.testArmedAndSensorActivated.executor": "Run",
+    "JUnit.SecurityServiceTest.testSecurityServiceActionsAndAlarmStatus.executor": "Run",
+    "Maven.ImageService [clean].executor": "Run",
+    "Maven.ImageService [compile].executor": "Run",
+    "Maven.ImageService [install].executor": "Run",
+    "Maven.ImageService [package].executor": "Run",
+    "Maven.ImageService [site].executor": "Run",
+    "Maven.SecurityService [clean].executor": "Run",
+    "Maven.SecurityService [install].executor": "Run",
+    "Maven.SecurityService [package].executor": "Run",
+    "Maven.SecurityService [site].executor": "Run",
+    "Maven.SecurityService [validate].executor": "Run",
+    "Maven.UdaSecurityParent [clean].executor": "Run",
+    "Maven.UdaSecurityParent [install].executor": "Run",
+    "Maven.UdaSecurityParent [package].executor": "Run",
+    "Maven.UdaSecurityParent [site].executor": "Run",
+    "Maven.UdaSecurityParent [validate].executor": "Run",
+    "Maven.UdaSecurityParent [verify].executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "ignore.virus.scanning.warn.message": "true",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "D:/Udacity_Java_Programing_Project_3",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "onboarding.tips.debug.path": "D:/Project_BackEnd/UdaSecurityParent/ImageService/src/main/java/com/udasecurity/Main.java",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "reference.settings.project.maven.runner",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\Project_BackEnd\UdaSecurityParent\SecurityService\src\test" />
+      <recent name="D:\Project_BackEnd\UdaSecurityParent" />
+      <recent name="D:\Project_BackEnd\UdaSecurityParent\SecurityService\src\main\java\com\udasecurity\service" />
+      <recent name="D:\Project_BackEnd\UdaSecurityParent\SecurityService\src\main\java\com\udasecurity\data" />
+      <recent name="D:\Project_BackEnd\UdaSecurityParent\SecurityService\src\main\java\com\udasecurity\application" />
+    </key>
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="com.udasecurity.service" />
+    </key>
+  </component>
+  <component name="RunManager" selected="JAR Application.SecurityService-1.0-SNAPSHOT-jar-with-dependencies.jar">
+    <configuration name="SecurityServiceTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="SecurityService" />
+      <option name="PACKAGE_NAME" value="com.udasecurity.service" />
+      <option name="MAIN_CLASS_NAME" value="com.udasecurity.service.SecurityServiceTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="SecurityServiceTest.processImage" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="SecurityService" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.udasecurity.service.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.udasecurity.service" />
+      <option name="MAIN_CLASS_NAME" value="com.udasecurity.service.SecurityServiceTest" />
+      <option name="METHOD_NAME" value="processImage(java.lang.String)" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="SecurityServiceTest.setArmingStatus" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="SecurityService" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.udasecurity.service.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.udasecurity.service" />
+      <option name="MAIN_CLASS_NAME" value="com.udasecurity.service.SecurityServiceTest" />
+      <option name="METHOD_NAME" value="setArmingStatus(java.lang.String)" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="SecurityServiceTest.testSecurityServiceActionsAndAlarmStatus" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="SecurityService" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.udasecurity.service.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.udasecurity.service" />
+      <option name="MAIN_CLASS_NAME" value="com.udasecurity.service.SecurityServiceTest" />
+      <option name="METHOD_NAME" value="testSecurityServiceActionsAndAlarmStatus" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="SecurityService-1.0-SNAPSHOT-jar-with-dependencies.jar" type="JarApplication" temporary="true">
+      <option name="JAR_PATH" value="$PROJECT_DIR$/SecurityService/target/SecurityService-1.0-SNAPSHOT-jar-with-dependencies.jar" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JAR Application.SecurityService-1.0-SNAPSHOT-jar-with-dependencies.jar" />
+        <item itemvalue="JUnit.SecurityServiceTest" />
+        <item itemvalue="JUnit.SecurityServiceTest.testSecurityServiceActionsAndAlarmStatus" />
+        <item itemvalue="JUnit.SecurityServiceTest.setArmingStatus" />
+        <item itemvalue="JUnit.SecurityServiceTest.processImage" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-jdk-9f38398b9061-39b83d9b5494-intellij.indexing.shared.core-IU-241.18034.62" />
+        <option value="bundled-js-predefined-1d06a55b98c1-0b3e54e931b4-JavaScript-IU-241.18034.62" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="332de968-a631-45fc-a22c-007ca9970331" name="Changes" comment="" />
+      <created>1725728213322</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1725728213322</updated>
+      <workItem from="1725728214427" duration="15213000" />
+      <workItem from="1725881732190" duration="10642000" />
+      <workItem from="1725965693980" duration="5354000" />
+      <workItem from="1726066444399" duration="7746000" />
+      <workItem from="1726144795646" duration="11354000" />
+      <workItem from="1726225696941" duration="8108000" />
+      <workItem from="1726290255559" duration="19613000" />
+      <workItem from="1726334679686" duration="2127000" />
+      <workItem from="1726336833071" duration="7365000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/udasecurity/Main.java</url>
+          <line>13</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/ImageService/src/main/java/com/udasecurity/service/image/Main.java</url>
+          <line>13</line>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/UdaSecurityParent$SecurityServiceTest.ic" NAME="SecurityServiceTest Coverage Results" MODIFIED="1726341817669" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true" />
+    <SUITE FILE_PATH="coverage/UdaSecurityParent$SecurityServiceTest_changeSensorActivationStatus.ic" NAME="SecurityServiceTest.changeSensorActivationStatus Coverage Results" MODIFIED="1726333593216" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true">
+      <FILTER>com.udasecurity.service.*</FILTER>
+    </SUITE>
+  </component>
+</project>
